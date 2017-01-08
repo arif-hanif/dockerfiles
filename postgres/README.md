@@ -12,7 +12,7 @@ $ make build
 
 This image is published on DockerHub as `docker pull strues/postgres`.
 
-[Click here to see it's DockerHub homepage](https://hub.docker.com/r/kiasaki/alpine-postgres/)
+[Click here to see it's DockerHub homepage](https://hub.docker.com/r/strues/postgres/)
 
 # Usage
 

@@ -1,8 +1,8 @@
 #!/bin/sh
 
 set_listen_addresses() {
-  sedEscapedValue="$(echo "$1" | sed 's/[\/&]/\\&/g')"
-  sed -ri "s/^#?(listen_addresses\s*=\s*)\S+/\1'$sedEscapedValue'/" "$PGDATA/postgresql.conf"
+	sedEscapedValue="$(echo "$1" | sed 's/[\/&]/\\&/g')"
+	sed -ri "s/^#?(listen_addresses\s*=\s*)\S+/\1'$sedEscapedValue'/" "$PGDATA/postgresql.conf"
 }
 
 if [ "$1" = 'postgres' ]; then

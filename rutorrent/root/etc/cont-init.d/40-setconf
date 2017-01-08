@@ -1,0 +1,16 @@
+#!/usr/bin/with-contenv bash
+
+# make folders
+mkdir -p /cfg/tmp /detach_sess
+
+# copy config files/set links etc...
+[[ ! -L /home/abc/.autodl ]] && ln -s /cfg/.autodl /home/abc/.autodl
+[[ ! -L /cfg/.irssi/scripts/autorun/autodl-irssi.pl ]] && ln -s /cfg/.irssi/scripts/autodl-irssi.pl /config/.irssi/scripts/autorun/autodl-irssi.pl
+[[ ! -f /cfg/.autodl/autodl.cfg ]] && cp /defaults/autodl.cfg /cfg/.autodl/autodl.cfg
+[[ ! -f /cfg/.autodl/autodl2.cfg ]] && cp /defaults/autodl2.cfg /cfg/.autodl/autodl2.cfg
+[[ ! -f /usr/share/webapps/rutorrent/plugins/autodl-rutorrent/conf.php ]] && cp /defaults/conf.php /usr/share/webapps/rutorrent/plugins/autodl-rutorrent/conf.php
+
+# set perms
+chown abc:abc -R /cfg /detach_sess
+chown abc:abc -R /usr/share/webapps/rutorrent
+chown abc:abc /t
